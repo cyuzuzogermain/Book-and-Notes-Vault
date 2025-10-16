@@ -1,3 +1,5 @@
+Link to Video Demonstration: https://youtu.be/9GSyC2K-8rw
+
 # Book & Notes Vault
 
 A modern, responsive web application for managing your personal book collection and reading notes. Built with vanilla JavaScript, this application provides a clean and intuitive interface for cataloging, organizing, and searching through your books.
