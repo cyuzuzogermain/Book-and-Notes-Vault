@@ -1,0 +1,126 @@
+{
+  "records": [
+    {
+      "id": "1760557418471",
+      "type": "book",
+      "title": "Home Chapter Two",
+      "author": "Germain",
+      "pages": 80,
+      "tag": "family",
+      "isbn": "0987654323",
+      "dateAdded": "2025-10-15T19:43:38.471Z",
+      "createdAt": "2025-10-15T19:43:38.471Z",
+      "updatedAt": "2025-10-15T19:43:38.471Z"
+    },
+    {
+      "id": "1760557418472",
+      "type": "book",
+      "title": "Echoes of Tomorrow",
+      "author": "Liam Ntwari",
+      "pages": 212,
+      "tag": "science fiction",
+      "isbn": "9781234567012",
+      "dateAdded": "2025-10-15T19:44:10.100Z",
+      "createdAt": "2025-10-15T19:44:10.100Z",
+      "updatedAt": "2025-10-15T19:44:10.100Z"
+    },
+    {
+      "id": "1760557418473",
+      "type": "book",
+      "title": "The River Between Us",
+      "author": "Aline Uwase",
+      "pages": 145,
+      "tag": "romance",
+      "isbn": "9781234567013",
+      "dateAdded": "2025-10-15T19:44:15.305Z",
+      "createdAt": "2025-10-15T19:44:15.305Z",
+      "updatedAt": "2025-10-15T19:44:15.305Z"
+    },
+    {
+      "id": "1760557418474",
+      "type": "book",
+      "title": "Data Dreams",
+      "author": "Germain",
+      "pages": 190,
+      "tag": "technology",
+      "isbn": "9781234567014",
+      "dateAdded": "2025-10-15T19:44:20.523Z",
+      "createdAt": "2025-10-15T19:44:20.523Z",
+      "updatedAt": "2025-10-15T19:44:20.523Z"
+    },
+    {
+      "id": "1760557418475",
+      "type": "book",
+      "title": "The Forgotten Village",
+      "author": "Martha Kamanzi",
+      "pages": 305,
+      "tag": "historical fiction",
+      "isbn": "9781234567015",
+      "dateAdded": "2025-10-15T19:44:25.611Z",
+      "createdAt": "2025-10-15T19:44:25.611Z",
+      "updatedAt": "2025-10-15T19:44:25.611Z"
+    },
+    {
+      "id": "1760557418476",
+      "type": "book",
+      "title": "Whispers of the Hills",
+      "author": "Teddy Rukundo",
+      "pages": 267,
+      "tag": "adventure",
+      "isbn": "9781234567016",
+      "dateAdded": "2025-10-15T19:44:31.182Z",
+      "createdAt": "2025-10-15T19:44:31.182Z",
+      "updatedAt": "2025-10-15T19:44:31.182Z"
+    },
+    {
+      "id": "1760557418477",
+      "type": "book",
+      "title": "Startup Streets",
+      "author": "Germain",
+      "pages": 198,
+      "tag": "business",
+      "isbn": "9781234567017",
+      "dateAdded": "2025-10-15T19:44:36.498Z",
+      "createdAt": "2025-10-15T19:44:36.498Z",
+      "updatedAt": "2025-10-15T19:44:36.498Z"
+    },
+    {
+      "id": "1760557418478",
+      "type": "book",
+      "title": "AI in Africa",
+      "author": "Divine Habimana",
+      "pages": 156,
+      "tag": "education",
+      "isbn": "9781234567018",
+      "dateAdded": "2025-10-15T19:44:42.781Z",
+      "createdAt": "2025-10-15T19:44:42.781Z",
+      "updatedAt": "2025-10-15T19:44:42.781Z"
+    },
+    {
+      "id": "1760557418479",
+      "type": "book",
+      "title": "Urban Voices",
+      "author": "Keza Mukamana",
+      "pages": 240,
+      "tag": "sociology",
+      "isbn": "9781234567019",
+      "dateAdded": "2025-10-15T19:44:47.339Z",
+      "createdAt": "2025-10-15T19:44:47.339Z",
+      "updatedAt": "2025-10-15T19:44:47.339Z"
+    },
+    {
+      "id": "1760557418480",
+      "type": "book",
+      "title": "The Code Within",
+      "author": "Germain",
+      "pages": 310,
+      "tag": "self-development",
+      "isbn": "9781234567020",
+      "dateAdded": "2025-10-15T19:44:52.912Z",
+      "createdAt": "2025-10-15T19:44:52.912Z",
+      "updatedAt": "2025-10-15T19:44:52.912Z"
+    }
+  ],
+  "exportedAt": "2025-10-15T19:45:00.000Z"
+}
+

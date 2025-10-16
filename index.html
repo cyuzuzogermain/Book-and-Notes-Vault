@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
+<title>Book & Notes Vault</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header" role="banner">
+  <div class="container nav">
+    <div class="nav-brand"><h1>Book & Notes Vault</h1></div>
+    <nav role="navigation" aria-label="Main">
+      <button id="navDashboard" class="nav-link" aria-controls="homeSection">Dashboard</button>
+      <button id="navBooks" class="nav-link" aria-controls="booksSection">Books</button>
+      <button id="navNotes" class="nav-link" aria-controls="notesSection">Notes</button>
+      <button id="navAdd" class="nav-link" aria-controls="addSection">Add New</button>
+      <button id="navAbout" class="nav-link" aria-controls="aboutSection">About</button>
+      <button id="navSettings" class="nav-link" aria-controls="settingsSection">Settings</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container main" role="main" tabindex="-1">
+
+  <section id="homeSection" class="section" aria-labelledby="homeTitle">
+    <h2 id="homeTitle">Dashboard</h2>
+    <p class="muted">Overview of your library and reading notes.</p>
+
+    <div class="stats-grid" aria-live="polite">
+      <div class="stat-card" aria-hidden="false">
+        <h4>Total Records</h4>
+        <div class="stat-number" id="statTotal">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>Total Pages</h4>
+        <div class="stat-number" id="statPages">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>Top Tag</h4>
+        <div class="stat-number" id="statTopTag">—</div>
+      </div>
+      <div class="stat-card">
+        <h4>Cap Status</h4>
+        <div class="stat-number" id="statCap">—</div>
+      </div>
+    </div>
+
+    <div class="trend-panel" aria-label="Last 7 days additions">
+      <h3>Last 7 days</h3>
+      <div id="trendChart" class="trend-chart" role="img" aria-label="Books added per day in last 7 days"></div>
+    </div>
+
+    <div id="capMessage" class="cap-message" role="status" aria-live="polite"></div>
+  </section>
+
+  <section id="booksSection" class="section hidden" aria-labelledby="booksTitle">
+    <h2 id="booksTitle">Books</h2>
+    <div class="controls">
+      <input id="searchInput" placeholder="Search books and notes (regex supported)" aria-label="Search records">
+      <button id="searchBtn" class="btn btn-primary">Search</button>
+      <button id="clearSearchBtn" class="btn">Clear</button>
+      <select id="filterTag"><option value="">All tags</option></select>
+    </div>
+    <div id="recordsContainer" class="records-container" aria-live="polite"></div>
+  </section>
+
+  <section id="notesSection" class="section hidden" aria-labelledby="notesTitle">
+    <h2 id="notesTitle">Notes</h2>
+    <div id="notesContainer" class="records-container" aria-live="polite"></div>
+  </section>
+
+  <section id="addSection" class="section hidden" aria-labelledby="addTitle">
+    <h2 id="addTitle">Add / Edit Record</h2>
+    <form id="recordForm" class="book-form" novalidate>
+      <div class="form-grid">
+        <label>Type
+          <select id="fieldType" required>
+            <option value="book">Book</option>
+            <option value="note">Note</option>
+          </select>
+        </label>
+
+        <label>Title
+          <input id="fieldTitle" type="text" required aria-describedby="titleHelp">
+          <span id="titleHelp" class="help"></span>
+        </label>
+
+        <label>Author
+          <input id="fieldAuthor" type="text" />
+        </label>
+
+        <label>Pages
+          <input id="fieldPages" type="number" min="0" step="1" aria-describedby="pagesHelp">
+          <span id="pagesHelp" class="help"></span>
+        </label>
+
+        <label>Tag
+          <input id="fieldTag" type="text" aria-describedby="tagHelp">
+          <span id="tagHelp" class="help"></span>
+        </label>
+
+
+        <label>ISBN
+          <input id="fieldISBN" type="text" aria-describedby="isbnHelp">
+          <span id="isbnHelp" class="help"></span>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveRecord" class="btn btn-primary">Save</button>
+        <button id="cancelRecord" type="button" class="btn">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="settingsSection" class="section hidden" aria-labelledby="settingsTitle">
+    <h2 id="settingsTitle">Settings</h2>
+
+    <div class="setting-group">
+      <label>Theme
+        <div><button id="themeToggle" class="btn">Toggle theme (Ctrl+D)</button></div>
+      </label>
+    </div>
+
+    <div class="setting-group">
+      <label>Cap / Target pages
+        <input id="capInput" type="number" min="0" placeholder="Enter target pages" />
+      </label>
+      <p class="muted">Set a pages cap/target to see remaining or overage on the dashboard.</p>
+    </div>
+
+    <div class="setting-group">
+      <h3>Data</h3>
+      <div class="dashboard-actions">
+        <button id="exportSettings" class="btn">Export JSON</button>
+        <button id="importSettings" class="btn">Import JSON</button>
+        <input id="importFile" type="file" accept="application/json" class="hidden" />
+        <button id="deleteAll" class="btn btn-danger">Delete All Records</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="aboutSection" class="section hidden" aria-labelledby="aboutTitle">
+    <h2 id="aboutTitle">About Book & Notes Vault</h2>
+    
+    <div class="about-card">
+      <h3>About Book & Notes Vault</h3>
+      <p><strong>Purpose:</strong> A personal library management system that helps you catalog books and maintain reading notes. All data is stored locally in your browser using localStorage — no server required, complete privacy guaranteed.</p>
+      
+      <div class="features-section">
+        <h4>Key Features</h4>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Book Cataloging</h5>
+              <p>Add books with title, author, pages, ISBN, and custom tags</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Reading Notes</h5>
+              <p>Create and manage detailed reading notes and annotations</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Dashboard Analytics</h5>
+              <p>Track reading progress with stats, trends, and insights</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Smart Search</h5>
+              <p>Find books and notes with regex-powered search and filtering</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Reading Goals</h5>
+              <p>Set page targets and track progress with cap management</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Dark Mode</h5>
+              <p>Switch between light and dark themes for comfortable reading</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Mobile Responsive</h5>
+              <p>Fully responsive design that works on all devices</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5>Data Export/Import</h5>
+              <p>Backup and restore your data with JSON export/import</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <h4>Contact & Support</h4>
+        <div class="contact-links">
+          <a href="https://github.com/cyuzuzogermain" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-icon"></span> GitHub
+          </a>
+          <a href="mailto:c.germain@alustudent.com" class="contact-link">
+            <span class="contact-icon"></span> c.germain@alustudent.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="yearEl"></span> Book & Notes Vault</p>
+  </div>
+</footer>
+
+<button id="floatingAdd" class="floating-button" aria-label="Add new">＋</button>
+
+<script src="./scripts/storage.js"></script>
+<script src="./scripts/validators.js"></script>
+<script src="./scripts/state.js"></script>
+<script src="./scripts/search.js"></script>
+<script src="./scripts/ui.js"></script>
+<script src="./scripts/script.js"></script>
+</body>
+</html>
